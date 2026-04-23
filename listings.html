@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Listings — JV Estate</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">JV</span>
+        <span class="logo-text">ESTATE</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="listings.html" class="nav-link active">Listings</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="register.html" class="nav-btn">Register</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <p class="section-tag">Explore</p>
+      <h1>All <em>Properties</em></h1>
+      <p class="breadcrumb"><a href="index.html">Home</a> → Listings</p>
+    </div>
+  </section>
+
+  <!-- FILTERS BAR -->
+  <div class="filters-bar">
+    <div class="filters-inner">
+      <button class="filter-chip active" data-filter="all">All Properties</button>
+      <button class="filter-chip" data-filter="plot">Plots</button>
+      <button class="filter-chip" data-filter="building">Buildings</button>
+      <button class="filter-chip" data-filter="site">Sites</button>
+      <button class="filter-chip" data-filter="commercial">Commercial</button>
+      <span class="filter-count" id="listingCount">6 Properties Found</span>
+    </div>
+  </div>
+
+  <section class="section" style="background:var(--cream);padding-top:3rem;">
+    <div class="container">
+      <div class="listings-grid" id="listingsGrid"></div>
+    </div>
+  </section>
+
+  <!-- UPLOAD CTA -->
+  <section class="cta-banner" style="padding:4rem 2rem;">
+    <div class="cta-content">
+      <h2>Want to <em>List Your Property?</em></h2>
+      <p>Contact us to feature your property on JV Estate and reach thousands of buyers.</p>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn-primary">List My Property</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><span class="logo-icon">JV</span><span class="logo-text">ESTATE</span></a>
+        <p>Your trusted partner in premium real estate across South India.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="listings.html">Listings</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="register.html">Register</a></li></ul></div>
+      <div class="footer-links"><h4>Property Types</h4><ul><li><a href="listings.html?type=plot">Plots</a></li><li><a href="listings.html?type=building">Buildings</a></li><li><a href="listings.html?type=site">Sites</a></li></ul></div>
+      <div class="footer-contact"><h4>Contact</h4><p><i class="fas fa-envelope"></i> jvestates.ss@gmail.com</p><p><i class="fas fa-phone"></i> +91 98765 43210</p><p><i class="fas fa-map-marker-alt"></i> 42, Richmond Road, Bangalore – 560025</p></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 JV Estate. All rights reserved.</p></div>
+  </footer>
+
+  <button class="scroll-top" title="Back to top"><i class="fas fa-chevron-up"></i></button>
+  <script src="js/main.js"></script>
+</body>
+</html>

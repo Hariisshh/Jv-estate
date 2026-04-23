@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Property Details — JV Estate</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>(function(){ emailjs.init({ publicKey: "YOUR_PUBLIC_KEY" }); })();</script>
+  <style>
+    .prop-meta { display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:1.5rem; }
+    .prop-meta span {
+      background:var(--cream); color:var(--green); padding:0.35rem 0.9rem;
+      border-radius:50px; font-size:0.8rem; font-weight:600;
+    }
+    .prop-section { margin-bottom:2rem; }
+    .prop-section h3 { font-size:1.3rem; margin-bottom:1rem; color:var(--charcoal); }
+    .prop-specs {
+      display:grid; grid-template-columns:repeat(3,1fr); gap:1rem;
+    }
+    .spec-item {
+      background:var(--cream); border-radius:10px; padding:1.2rem;
+      display:flex; flex-direction:column; gap:0.3rem;
+    }
+    .spec-item .spec-label {
+      font-size:0.72rem; font-weight:600; text-transform:uppercase;
+      letter-spacing:0.08em; color:var(--text-light);
+    }
+    .spec-item .spec-val { font-size:1rem; font-weight:600; color:var(--charcoal); }
+    .nearby-tags { display:flex; flex-wrap:wrap; gap:0.5rem; }
+    .nearby-tag {
+      display:flex; align-items:center; gap:0.4rem;
+      background:var(--white); border:1.5px solid var(--cream-dark);
+      border-radius:50px; padding:0.4rem 0.9rem; font-size:0.82rem; color:var(--text);
+    }
+    .nearby-tag i { color:var(--green-light); }
+  </style>
+</head>
+<body id="propertyDetail">
+
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">JV</span>
+        <span class="logo-text">ESTATE</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="listings.html" class="nav-link active">Listings</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="register.html" class="nav-btn">Register</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="page-hero" style="padding:8rem 0 3rem;">
+    <div class="page-hero-inner">
+      <p class="section-tag" id="detailType">Property</p>
+      <h1 id="detailTitle">Property Details</h1>
+      <p class="breadcrumb">
+        <a href="index.html">Home</a> → <a href="listings.html">Listings</a> → <span id="propBreadcrumb"></span>
+      </p>
+    </div>
+  </section>
+
+  <section class="property-detail">
+    <div class="container">
+      <div class="detail-grid">
+
+        <!-- LEFT: Gallery + Info -->
+        <div>
+          <div class="gallery">
+            <div class="gallery-main">
+              <img id="detailImg" src="" alt="Property"/>
+            </div>
+          </div>
+
+          <!-- Property Info -->
+          <div class="prop-section">
+            <h3>About This Property</h3>
+            <p id="detailDesc" style="color:var(--text-light);line-height:1.8;"></p>
+          </div>
+
+          <div class="prop-meta" id="detailTags"></div>
+
+          <div class="prop-section">
+            <h3>Property Specifications</h3>
+            <div class="prop-specs">
+              <div class="spec-item">
+                <span class="spec-label">Total Area</span>
+                <span class="spec-val" id="detailArea"></span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Facing</span>
+                <span class="spec-val" id="detailFacing"></span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Road Width</span>
+                <span class="spec-val" id="detailRoad"></span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Location</span>
+                <span class="spec-val" id="detailLocation"></span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Status</span>
+                <span class="spec-val">Ready for Sale</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Availability</span>
+                <span class="spec-val">Immediate</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="prop-section">
+            <h3>Nearby Amenities</h3>
+            <div class="nearby-tags">
+              <span class="nearby-tag"><i class="fas fa-school"></i> School (0.5 km)</span>
+              <span class="nearby-tag"><i class="fas fa-hospital"></i> Hospital (1.2 km)</span>
+              <span class="nearby-tag"><i class="fas fa-train"></i> Metro Station (2 km)</span>
+              <span class="nearby-tag"><i class="fas fa-shopping-cart"></i> Mall (1.5 km)</span>
+              <span class="nearby-tag"><i class="fas fa-bus"></i> Bus Stop (0.2 km)</span>
+              <span class="nearby-tag"><i class="fas fa-utensils"></i> Restaurants (0.3 km)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Price Card + Enquiry Form -->
+        <div>
+          <div class="detail-info-card">
+            <div class="detail-price" id="detailPrice"></div>
+            <p style="color:var(--text-light);font-size:0.85rem;margin-bottom:1.5rem;">
+              <i class="fas fa-check-circle" style="color:var(--green-light);"></i>
+              Verified listing. Loan eligible. Clear title.
+            </p>
+            <div class="detail-form">
+              <h4 style="margin-bottom:1.2rem;font-size:1.1rem;">Request a Site Visit</h4>
+              <div id="enquirySuccess" style="display:none;background:#f0fdf4;border:1.5px solid #86efac;border-radius:8px;padding:1rem;text-align:center;color:#15803d;font-size:0.85rem;margin-bottom:1rem;">
+                <i class="fas fa-circle-check"></i> Enquiry sent! We'll call you shortly.
+              </div>
+              <label>Your Name</label>
+              <input type="text" id="enqName" placeholder="Full name"/>
+              <label>Phone Number</label>
+              <input type="tel" id="enqPhone" placeholder="+91 00000 00000"/>
+              <label>Email</label>
+              <input type="email" id="enqEmail" placeholder="your@email.com"/>
+              <label>Preferred Date</label>
+              <input type="date" id="enqDate"/>
+              <label>Message</label>
+              <textarea id="enqMessage" placeholder="Any specific questions or requirements?"></textarea>
+              <button class="submit-btn" id="enquiryBtn" onclick="submitEnquiry()">
+                <i class="fas fa-calendar-check"></i> Book Site Visit
+              </button>
+            </div>
+            <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--cream-dark);">
+              <p style="font-size:0.82rem;color:var(--text-light);margin-bottom:0.8rem;">Or contact us directly:</p>
+              <a href="tel:+919876543210" style="display:flex;align-items:center;gap:0.6rem;color:var(--green);font-weight:600;margin-bottom:0.6rem;">
+                <i class="fas fa-phone"></i> +91 98765 43210
+              </a>
+              <a href="mailto:jvestates.ss@gmail.com" style="display:flex;align-items:center;gap:0.6rem;color:var(--green);font-weight:600;">
+                <i class="fas fa-envelope"></i> jvestates.ss@gmail.com
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Similar Properties -->
+  <section class="section featured-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">Explore More</p>
+        <h2 class="section-title">Similar <em>Properties</em></h2>
+      </div>
+      <div class="listings-grid" id="similarGrid"></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><span class="logo-icon">JV</span><span class="logo-text">ESTATE</span></a>
+        <p>Your trusted partner in premium real estate across South India.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="listings.html">Listings</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-links"><h4>Property Types</h4><ul><li><a href="listings.html?type=plot">Plots</a></li><li><a href="listings.html?type=building">Buildings</a></li><li><a href="listings.html?type=site">Sites</a></li></ul></div>
+      <div class="footer-contact"><h4>Contact</h4><p><i class="fas fa-envelope"></i> jvestates.ss@gmail.com</p><p><i class="fas fa-phone"></i> +91 98765 43210</p><p><i class="fas fa-map-marker-alt"></i> 42, Richmond Road, Bangalore – 560025</p></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 JV Estate. All rights reserved.</p></div>
+  </footer>
+
+  <button class="scroll-top" title="Back to top"><i class="fas fa-chevron-up"></i></button>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Similar properties grid (show others except current)
+    const similarGrid = document.getElementById('similarGrid');
+    if (similarGrid) {
+      const curId = parseInt(new URLSearchParams(window.location.search).get('id'));
+      const similar = properties.filter(p => p.id !== curId).slice(0, 3);
+      similarGrid.innerHTML = similar.map(p => renderCard(p)).join('');
+    }
+
+    // Enquiry form for this property
+    function submitEnquiry() {
+      const btn = document.getElementById('enquiryBtn');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+
+      const prop = document.getElementById('detailTitle').textContent;
+      emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+        to_email:    'jvestates.ss@gmail.com',
+        from_name:   document.getElementById('enqName').value,
+        from_email:  document.getElementById('enqEmail').value,
+        phone:       document.getElementById('enqPhone').value,
+        message:     `Site Visit Request for: ${prop}\nPreferred Date: ${document.getElementById('enqDate').value}\n\n${document.getElementById('enqMessage').value}`,
+        subject:     `Site Visit Request — ${prop}`,
+        reply_to:    document.getElementById('enqEmail').value
+      }).then(() => {
+        document.getElementById('enquirySuccess').style.display = 'block';
+        btn.textContent = 'Request Sent!';
+      }).catch(() => {
+        btn.textContent = 'Book Site Visit';
+        btn.disabled = false;
+        alert('Could not send. Please call us at +91 98765 43210');
+      });
+    }
+  </script>
+</body>
+</html>

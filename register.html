@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register — JV Estate</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <!-- EmailJS SDK — sends email to jvestates.ss@gmail.com on registration -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    // ⚠ SETUP REQUIRED: Replace with your EmailJS Public Key
+    // 1. Go to https://www.emailjs.com and create a free account
+    // 2. Create an Email Service (connect Gmail: jvestates.ss@gmail.com)
+    // 3. Create an Email Template
+    // 4. Replace 'YOUR_PUBLIC_KEY' below with your actual public key
+    // 5. Update 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' in js/main.js
+    (function() {
+      emailjs.init({ publicKey: "YOUR_PUBLIC_KEY" });
+    })();
+  </script>
+</head>
+<body>
+
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">JV</span>
+        <span class="logo-text">ESTATE</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="listings.html" class="nav-link">Listings</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="register.html" class="nav-btn">Register</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <p class="section-tag">Join Us</p>
+      <h1>Client <em>Registration</em></h1>
+      <p class="breadcrumb"><a href="index.html">Home</a> → Register</p>
+    </div>
+  </section>
+
+  <section class="register-section">
+    <div class="register-container">
+
+      <!-- Benefits Banner -->
+      <div style="background:var(--green);border-radius:14px;padding:1.5rem 2rem;margin-bottom:2rem;color:white;display:flex;gap:2rem;flex-wrap:wrap;justify-content:center;">
+        <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.88rem;"><i class="fas fa-bell" style="color:var(--gold-light)"></i> Early access to new listings</div>
+        <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.88rem;"><i class="fas fa-tag" style="color:var(--gold-light)"></i> Exclusive deals & offers</div>
+        <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.88rem;"><i class="fas fa-user-tie" style="color:var(--gold-light)"></i> Dedicated agent support</div>
+      </div>
+
+      <div class="register-card">
+        <h2>Create Your <em>Account</em></h2>
+        <p class="sub">Fill in your details and our team will get in touch with personalised property options.</p>
+
+        <!-- Success Message -->
+        <div class="success-msg" id="successMsg">
+          <i class="fas fa-circle-check"></i>
+          <strong>Registration Successful!</strong><br/>
+          Thank you for registering with JV Estate. Our team will contact you within 24 hours with curated property options.
+        </div>
+
+        <form id="registerForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="regName">Full Name *</label>
+              <input type="text" id="regName" placeholder="Your full name" required/>
+            </div>
+            <div class="form-group">
+              <label for="regPhone">Phone Number *</label>
+              <input type="tel" id="regPhone" placeholder="+91 00000 00000" required/>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="regEmail">Email Address *</label>
+            <input type="email" id="regEmail" placeholder="your@email.com" required/>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="regCity">Preferred City</label>
+              <input type="text" id="regCity" placeholder="Bangalore, Mysore..."/>
+            </div>
+            <div class="form-group">
+              <label for="regInterest">Interested In</label>
+              <select id="regInterest">
+                <option value="">Select type</option>
+                <option>Plot</option>
+                <option>Building</option>
+                <option>Site</option>
+                <option>Commercial Property</option>
+                <option>Any</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="regBudget">Budget Range</label>
+            <select id="regBudget">
+              <option value="">Select budget</option>
+              <option>Under ₹25 Lakhs</option>
+              <option>₹25 – ₹50 Lakhs</option>
+              <option>₹50L – ₹1 Crore</option>
+              <option>₹1 – ₹2 Crores</option>
+              <option>Above ₹2 Crores</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="regMessage">Additional Requirements</label>
+            <textarea id="regMessage" rows="3" placeholder="Any specific requirements, preferred locations, amenities needed..."></textarea>
+          </div>
+
+          <div style="display:flex;align-items:flex-start;gap:0.75rem;margin-bottom:1.2rem;">
+            <input type="checkbox" id="regConsent" style="margin-top:3px;width:auto;accent-color:var(--green);" required/>
+            <label for="regConsent" style="font-size:0.82rem;color:var(--text-light);text-transform:none;letter-spacing:0;font-weight:400;">
+              I agree to be contacted by JV Estate regarding property listings and updates. I understand my information will be handled with complete confidentiality.
+            </label>
+          </div>
+
+          <button type="submit" class="submit-btn">
+            <i class="fas fa-paper-plane"></i> Register Now
+          </button>
+
+          <p class="form-note">
+            Already connected? <a href="contact.html">Contact us directly</a> or call <strong>+91 98765 43210</strong>
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><span class="logo-icon">JV</span><span class="logo-text">ESTATE</span></a>
+        <p>Your trusted partner in premium real estate.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="listings.html">Listings</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-links"><h4>Property Types</h4><ul><li><a href="listings.html?type=plot">Plots</a></li><li><a href="listings.html?type=building">Buildings</a></li><li><a href="listings.html?type=site">Sites</a></li></ul></div>
+      <div class="footer-contact"><h4>Contact</h4><p><i class="fas fa-envelope"></i> jvestates.ss@gmail.com</p><p><i class="fas fa-phone"></i> +91 98765 43210</p><p><i class="fas fa-map-marker-alt"></i> 42, Richmond Road, Bangalore – 560025</p></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 JV Estate. All rights reserved.</p></div>
+  </footer>
+
+  <button class="scroll-top" title="Back to top"><i class="fas fa-chevron-up"></i></button>
+  <script src="js/main.js"></script>
+</body>
+</html>

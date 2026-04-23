@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact — JV Estate</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>(function(){ emailjs.init({ publicKey: "YOUR_PUBLIC_KEY" }); })();</script>
+</head>
+<body>
+
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">JV</span>
+        <span class="logo-text">ESTATE</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="listings.html" class="nav-link">Listings</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="contact.html" class="nav-link active">Contact</a></li>
+        <li><a href="register.html" class="nav-btn">Register</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <p class="section-tag">Reach Out</p>
+      <h1>Contact <em>Us</em></h1>
+      <p class="breadcrumb"><a href="index.html">Home</a> → Contact</p>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="contact-grid">
+
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <p class="section-tag">Get in Touch</p>
+        <h2>We'd Love to<br/><em>Hear From You</em></h2>
+        <p>Whether you're looking for a property, want to list one, or simply have a question — our team is here to help.</p>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon"><i class="fas fa-phone"></i></div>
+          <div class="contact-detail-text">
+            <strong>Phone</strong>
+            <span>+91 98765 43210</span>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon"><i class="fas fa-envelope"></i></div>
+          <div class="contact-detail-text">
+            <strong>Email</strong>
+            <span>jvestates.ss@gmail.com</span>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="contact-detail-text">
+            <strong>Office</strong>
+            <span>42, Richmond Road, Bangalore – 560025, Karnataka</span>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon"><i class="fas fa-clock"></i></div>
+          <div class="contact-detail-text">
+            <strong>Working Hours</strong>
+            <span>Mon–Sat: 9:00 AM – 7:00 PM<br/>Sunday: By Appointment</span>
+          </div>
+        </div>
+
+        <div class="social-links" style="margin-top:0.5rem;">
+          <a href="#" style="border-color:rgba(27,67,50,0.2);color:var(--text-light);"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" style="border-color:rgba(27,67,50,0.2);color:var(--text-light);"><i class="fab fa-instagram"></i></a>
+          <a href="#" style="border-color:rgba(27,67,50,0.2);color:var(--text-light);"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" style="border-color:rgba(27,67,50,0.2);color:var(--text-light);"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form-card">
+        <h3>Send a <em>Message</em></h3>
+        <form id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cName">Your Name *</label>
+              <input type="text" id="cName" placeholder="Full name" required/>
+            </div>
+            <div class="form-group">
+              <label for="cPhone">Phone *</label>
+              <input type="tel" id="cPhone" placeholder="+91 00000 00000" required/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="cEmail">Email *</label>
+            <input type="email" id="cEmail" placeholder="your@email.com" required/>
+          </div>
+          <div class="form-group">
+            <label for="cSubject">Subject</label>
+            <select id="cSubject">
+              <option>Property Enquiry</option>
+              <option>List My Property</option>
+              <option>Site Visit Request</option>
+              <option>General Question</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="cMessage">Message *</label>
+            <textarea id="cMessage" rows="5" placeholder="Tell us how we can help..." required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Map Embed Placeholder -->
+    <div style="max-width:1100px;margin:4rem auto 0;padding:0 2rem;">
+      <div style="border-radius:var(--radius);overflow:hidden;height:350px;box-shadow:var(--shadow);">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.0458397487486!2d77.60534407507604!3d12.969143987336074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15f8d41e46a3%3A0x40b7e78fab05b10!2sRichmond%20Road%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1703000000000!5m2!1sen!2sin"
+          width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><span class="logo-icon">JV</span><span class="logo-text">ESTATE</span></a>
+        <p>Your trusted partner in premium real estate across South India.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="listings.html">Listings</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-links"><h4>Property Types</h4><ul><li><a href="listings.html?type=plot">Plots</a></li><li><a href="listings.html?type=building">Buildings</a></li><li><a href="listings.html?type=site">Sites</a></li></ul></div>
+      <div class="footer-contact"><h4>Contact</h4><p><i class="fas fa-envelope"></i> jvestates.ss@gmail.com</p><p><i class="fas fa-phone"></i> +91 98765 43210</p><p><i class="fas fa-map-marker-alt"></i> 42, Richmond Road, Bangalore – 560025</p></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 JV Estate. All rights reserved.</p></div>
+  </footer>
+
+  <button class="scroll-top" title="Back to top"><i class="fas fa-chevron-up"></i></button>
+  <script src="js/main.js"></script>
+</body>
+</html>
